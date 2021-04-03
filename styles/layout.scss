@@ -1,9 +1,91 @@
 // See: https://sass-lang.com/
 
+// NAVBAR / HEADER --------------------------------
+
+
+* {
+  border: solid black 1px;
+}
+
 body {
   background-color: #EEE;
 
   h1 {
     color: #244751;
   }
+}
+
+.navBar {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.logoContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 20px;
+}
+.navButtonsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 30px;
+  margin-right: 20px;
+  width: 30%;
+}
+
+.bannerContainer {
+  display: flex;
+  justify-content: center;
+  height: 130px;
+}
+
+// MENU AND CART MAIN CONTAINER ------------------------
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: blanchedalmond;
+  width: 50%;
+}
+.cartContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-end;
+  background-color: cadetblue;
+  width: 30%;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: flex-end;
+  width: 100%;
+}
+.purchaseButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+// FOOTER CONTAINER ------------------------
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: cyan;
+}
+
+.mapContainer {
+  background-color: burlywood;
 }
