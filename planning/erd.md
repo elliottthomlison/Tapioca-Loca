@@ -18,7 +18,6 @@ work_phone VARCHAR(55)
 
 # Menu_items
 id SERIAL PK
-menu_id FK menus.id
 name VARCHAR(55)
 bill_time_minutes INTEGER
 price_cents INTEGER
@@ -28,7 +27,7 @@ stock INTEGER
 id SERIAL PK
 item_name FK items.name
 item_price_cents FK items.price_cents
-item_bill_time FK items.bill_time
+item_bill_time FK items.bill_time_minutes
 
 # Order
 id SERIAL PK
