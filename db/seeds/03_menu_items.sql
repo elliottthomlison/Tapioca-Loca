@@ -25,7 +25,7 @@ INSERT INTO Menu_items (
   price_cents,
   stock
   ) VALUES (
-    'Green Tea'
+    'Green Tea',
     4,
     599,
     100
@@ -37,7 +37,7 @@ INSERT INTO Menu_items (
   price_cents,
   stock
   ) VALUES (
-    'Black Tea'
+    'Black Tea',
     4,
     650,
     100
@@ -49,7 +49,7 @@ INSERT INTO Menu_items (
   price_cents,
   stock
   ) VALUES (
-    'Berry Tea'
+    'Berry Tea',
     5,
     699,
     50
@@ -61,7 +61,7 @@ INSERT INTO Menu_items (
   price_cents,
   stock
   ) VALUES (
-    'Rare Tea'
+    'Rare Tea',
     10,
     1099,
     0

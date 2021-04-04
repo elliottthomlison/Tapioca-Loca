@@ -12,5 +12,5 @@ CREATE TABLE menu_items (
   name VARCHAR(55) NOT NULL,
   bill_time_minutes INTEGER NOT NULL DEFAULT 10,
   price_cents INTEGER NOT NULL,
-  stock INTEGER NOT NULL DEFAULT 0,
-)
+  stock INTEGER NOT NULL DEFAULT 0
+);

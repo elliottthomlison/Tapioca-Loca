@@ -16,5 +16,5 @@ CREATE TABLE users (
   phone_number VARCHAR(55) NOT NULL,
   password VARCHAR(55) NOT NULL,
   type VARCHAR(55) DEFAULT 'customer',
-  member_since DATE DEFAULT getdate()
+  member_since DATE
 );
