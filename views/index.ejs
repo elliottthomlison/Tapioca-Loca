@@ -9,6 +9,7 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
   </head>
 
   <body>
@@ -59,20 +60,20 @@
         <!-- CART -->
         <table class="cartContainer">
           <tbody class="cart">
-            <tr>
-              <td><p>Let's try and route something to here** when we click add to cart</p></td>
-            </tr>
-            <tr>
-              <td><%=locals[1].name%></td><td><%=locals[1].phone_number%></td>
-            </tr>
-            <tr>
-              <td><%=locals[2].name%></td><td><%=locals[2].phone_number%></td>
-            </tr>
-            <tr>
-              <td><%=locals[0].name%></td><td><%=locals[0].phone_number%></td>
-            </tr>
+            <div class="cartItemsContainer">
+              <tr>
+                <td><%=locals[1].name%></td><td><%=locals[1].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
+              </tr>
+              <tr>
+                <td><%=locals[2].name%></td><td><%=locals[2].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
+              </tr>
+              <tr>
+                <td><%=locals[3].name%></td><td><%=locals[3].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
+              </tr>
+            </div>
+            <div class="ajax_attempt">
 
-
+            </div>
             <!-- <tr>
               <td>Green Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE </button></td>
             </tr>
@@ -88,9 +89,10 @@
             <tr>
               <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
             </tr> -->
+
             <tr class="purchaseButtonContainer"><td><button class="purchaseButton" type="submit" > PURCHASE</button></td></tr>
-          </table>
           </tbody>
+        </table>
 
       </div>
 

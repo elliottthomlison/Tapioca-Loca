@@ -15,9 +15,10 @@
 -- DROP TABLE IF EXISTS cart CASCADE;
 CREATE TABLE cart (
   id SERIAL PRIMARY KEY NOT NULL,
-  CONSTRAINT fk_item_name FOREIGN KEY(item_name) REFERENCES menu_items(name),
-  FOREIGN KEY (item_bill_time) REFERENCES menu_items(bill_time_minutes),
-  FOREIGN KEY (item_price_cents) REFERENCES menu_items(price_cents),
-  FOREIGN KEY (stock) REFERENCES menu_items(stock)
+  menu_id INTEGER REFERENCES menu_items(id),
+  item_name VARCHAR(55) REFERENCES menu_items(name),
+item_bill_time INTEGER REFERENCES menu_items(bill_time_minutes),
+item_price_cents INTEGER REFERENCES menu_items(price_cents),
+stock INTEGER REFERENCES menu_items(stock)
 );
 

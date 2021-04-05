@@ -69,8 +69,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: flex-end;
   width: 100%;
+}
+.cartItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .purchaseButtonContainer {
   display: flex;

@@ -1,18 +1,16 @@
+
 const express = require('express');
 const router  = express.Router();
 
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM cart`;
-    console.log("listening to cart!")
-    console.log("THIS IS THE CART QUERY : ", query);
-    db.query(query)
+    console.log("hello world users.route")
+    db.query(`SELECT * FROM menu_items;`)
       .then(data => {
-        console.log("data = ", data);
-        const cartObject = data.rows;
-        console.log("cartObject =", cartObject);
-        res.render('index', cartObject);
+        const menu_items = data.rows;
+        console.log("DATA.rows =", menu_items);
+        res.render ('index', menu_items);
+
       })
       .catch(err => {
         res
