@@ -12,8 +12,95 @@
   </head>
 
   <body>
-    <h1>Tapioca Loca!</h1>
-    <a href="/login">Login</a>
-    <a href="/register">Register </a>
+    <header>
+      <!-- NAVBAR -->
+      <nav class="navBar">
+        <div class="logoContainer">
+          <h1 id="logo">Tapioca Loca!</h1>
+        </div>
+
+        <div class="navButtonsContainer">
+          <a href="/login">Login</a>
+          <a href="/register">Register </a>
+          <a href="/cart">Cart</a>
+        </div>
+      </nav>
+
+      <!-- BANNER -->
+      <div class="bannerContainer">
+        <p>This is a banner</p>
+
+      </div>
+
+    </header>
+    <main>
+      <div class="mainContainer">
+        <!-- MENU -->
+        <table class="menuContainer">
+          <tr>
+            <th>Item</th><th>Price</th>
+          </tr>
+          <tr>
+            <td>Green Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          </tr>
+          <tr>
+            <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          </tr>
+          <tr>
+            <td>Red Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          </tr>
+          <tr>
+            <td>Black Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          </tr>
+          <tr>
+            <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          </tr>
+        </table>
+        <!-- CART -->
+        <table class="cartContainer">
+          <tbody class="cart">
+            <tr>
+              <td><p>Let's try and route something to here** when we click add to cart</p></td>
+            </tr>
+
+
+            <!-- <tr>
+              <td>Green Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE </button></td>
+            </tr>
+            <tr>
+              <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
+            </tr>
+            <tr>
+              <td>Red Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
+            </tr>
+            <tr>
+              <td>Black Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
+            </tr>
+            <tr>
+              <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
+            </tr> -->
+            <tr class="purchaseButtonContainer"><td><button class="purchaseButton" type="submit" > PURCHASE</button></td></tr>
+          </table>
+          </tbody>
+
+      </div>
+
+      <footer>
+
+        <div class="mapContainer">
+          <h5>MAP</h5>
+        </div>
+        <div class="mapContainer">
+          <ul>
+            <li>Address: 345 Chesnut Drive</li>
+            <li>Phone: 604-BUBBLE-T</li>
+            <li>Email: ela@tapioca_loca.ca</li>
+          </ul>
+        </div>
+
+      </footer>
+
+
+    </main>
   </body>
 </html>
