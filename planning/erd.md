@@ -9,7 +9,6 @@ phone_number VARCHAR(55)
 password VARCHAR(55)
 type VARCHAR(55) (customer, owner, employee)
 
-
 # Staff
 id SERIAL PK
 user_id FK users.id
