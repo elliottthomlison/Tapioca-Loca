@@ -46,18 +46,30 @@ $(document).on("click",".addItem",function() {
     localStorage.setItem("storageArray", JSON.stringify(storageArray));
 
     // Retrieve and print in cart
+    // CREATES table row
     const parent = document.getElementById("cartItemsContainer");
     const tr = document.createElement("tr");
     const tdName = document.createElement("td");
     const tdPrice = document.createElement("td");
-    tdName.setAttribute("id", "resultName");
-    tdPrice.setAttribute("id", "resultPrice");
+    const removeButtonTd = document.createElement("td");
+    const removeButton = document.createElement("button");
+    tdName.setAttribute("class", "resultName");
+    tdPrice.setAttribute("class", "resultPrice");
+    removeButton.setAttribute("class", "removeButton");
+    removeButton.setAttribute("type", "submit");
 
+    // ADDS td to row
     tdName.innerHTML = storageArray[0];
     tdPrice.innerHTML = storageArray[1];
+    removeButton.innerHTML = "REMOVE ITEM"
 
+
+    // ADDS button to td, all td's to tr, and tr to parent (cartItemsContainer)
+    removeButtonTd.prepend(removeButton);
+    tr.prepend(removeButtonTd);
     tr.prepend(tdPrice);
     tr.prepend(tdName);
+
     parent.prepend(tr);
 
   } else {
@@ -68,23 +80,6 @@ $(document).on("click",".addItem",function() {
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
 
 });
-// var parent = document.createElement("div");
-// var p = document.createElement("p");
-// var span = document.createElement("span");
-// parent.append(p);
-// parent.prepend(span);
-{/* <tr>
-<td id="resultName"></td><td id="resultPrice"></td>
-</tr>
-<tr>
-<td id="resultName"></td><td id="resultPrice"></td>
-</tr>
-<tr>
-<td id="resultName"></td><td id="resultPrice"></td>
-</tr> */}
-
-
-
 
   // REMOVE FROM CART
   $(document).on("click",".removeItem",function() {
