@@ -27,7 +27,6 @@ $(() => {
 $(document).ready(function() {
 
   // ADD TO CART
-
   //     // add to local storage, push item to array
   //     // another function populates cart (render.items)
   //     // Gets through jquery, and iterates using for loop
