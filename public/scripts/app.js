@@ -54,6 +54,9 @@ $(document).on("click",".addItem",function() {
     const tdPrice = document.createElement("td");
     const removeButtonTd = document.createElement("td");
     const removeButton = document.createElement("button");
+
+
+    tr.setAttribute("class", "cartTr");
     tdName.setAttribute("class", "resultName");
     tdPrice.setAttribute("class", "resultPrice");
     removeButton.setAttribute("class", "removeButton");
@@ -84,8 +87,13 @@ $(document).on("click",".addItem",function() {
 
 
   // REMOVE FROM CART
-  $(document).on("click",".removeButton",function() {
-    alert("Remove item from cart");
+  $(document).on("click",".clearCartButton",function() {
+    // remove from cart
+    $('.cartTr').remove();
+
+    // remove from localstorage(cart array)
+    localStorage.removeItem("cartArray");
+
   });
 
 
