@@ -41,32 +41,27 @@
           <tr>
             <th>Item</th><th>Price</th>
           </tr>
-          <tr>
-            <td>Green Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          <tr id="item1">
+            <td class="itemName">Green Bubble Tea</td><td class="itemPrice">$6.50</td><td><button class="addItem" type="submit"> ADD TO CART </button></td>
           </tr>
-          <tr>
-            <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          <tr id="item2">
+            <td class="itemName">Orange Bubble Tea</td><td class="itemPrice">$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
           </tr>
-          <tr>
-            <td>Red Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          <tr id="item3">
+            <td class="itemName">Red Bubble Tea</td><td class="itemPrice">$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
           </tr>
-          <tr>
-            <td>Black Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          <tr id="item4">
+            <td class="itemName">Black Bubble Tea</td><td class="itemPrice">$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
           </tr>
-          <tr>
-            <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+          <tr id="item5">
+            <td class="itemName">Blue Bubble Tea</td><td class="itemPrice">$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
           </tr>
         </table>
         <!-- CART -->
         <table class="cartContainer">
           <tbody class="cart">
-            <div class="cartItemsContainer">
-              <tr>
-                <td><%=locals[1].name%></td><td><%=locals[1].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
-              </tr>
-              <tr>
-                <td><%=locals[2].name%></td><td><%=locals[2].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
-              </tr>
+            <div class="cartItemsContainer" id="cartItemsContainer">
+
               <tr>
                 <td><%=locals[3].name%></td><td><%=locals[3].price_cents%></td><td><button class="removeItem" type="submit" > REMOVE </button></td>
               </tr>
@@ -74,22 +69,6 @@
             <div class="ajax_attempt">
 
             </div>
-            <!-- <tr>
-              <td>Green Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE </button></td>
-            </tr>
-            <tr>
-              <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Red Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Black Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr> -->
-
             <tr class="purchaseButtonContainer"><td><button class="purchaseButton" type="submit" > PURCHASE</button></td></tr>
           </tbody>
         </table>
