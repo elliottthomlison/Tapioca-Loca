@@ -1,4 +1,5 @@
 
+
 const express = require('express');
 const router  = express.Router();
 
@@ -9,7 +10,7 @@ module.exports = (db) => {
       .then(data => {
         const menu_items = data.rows;
         console.log("DATA.rows =", menu_items);
-        res.render ('index', menu_items);
+        res.render('index', {items: menu_items});
 
       })
       .catch(err => {
@@ -20,4 +21,5 @@ module.exports = (db) => {
   });
   return router;
 };
+
 

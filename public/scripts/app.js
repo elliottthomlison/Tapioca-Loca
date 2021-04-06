@@ -1,3 +1,5 @@
+
+
 $(() => {
   $.ajax({
     method: "GET",
@@ -30,7 +32,6 @@ $(document).ready(function() {
   //     // another function populates cart (render.items)
   //     // Gets through jquery, and iterates using for loop
 
-
 $(document).on("click",".addItem",function() {
   // let row = $("#item1");
   let row = $(this).closest("tr");
@@ -61,7 +62,7 @@ $(document).on("click",".addItem",function() {
     // ADDS td to row
     tdName.innerHTML = storageArray[0];
     tdPrice.innerHTML = storageArray[1];
-    removeButton.innerHTML = "REMOVE ITEM"
+    removeButton.innerHTML = "REMOVE"
 
 
     // ADDS button to td, all td's to tr, and tr to parent (cartItemsContainer)
@@ -78,18 +79,23 @@ $(document).on("click",".addItem",function() {
   cartArray.push(storageArray);
   console.log("cartArray = ", cartArray);
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
-
 });
 
+
+
   // REMOVE FROM CART
-  $(document).on("click",".removeItem",function() {
+  $(document).on("click",".removeButton",function() {
     alert("Remove item from cart");
   });
+
+
+
   // PURCHASE BUTTON
   $(document).on("click",".purchaseButton",function() {
   alert("Purchase item, send text to owner using Twilio");
   // AJAX post sends all items data in local storage to server side
   });
 });
+
 
 
