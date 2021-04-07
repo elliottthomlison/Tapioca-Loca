@@ -15,7 +15,7 @@ module.exports = (db) => {
       .then(data => {
         const users = data.rows;
         console.log("DATA.rows =", users);
-        res.render ('index', users);
+        res.render ('index', {users, items: [] });
 
       })
       .catch(err => {
