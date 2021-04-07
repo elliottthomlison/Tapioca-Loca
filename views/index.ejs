@@ -9,6 +9,7 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
   </head>
 
   <body>
@@ -40,48 +41,25 @@
           <tr>
             <th>Item</th><th>Price</th>
           </tr>
-          <tr>
-            <td>Green Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
+
+          <%for(let item of items) {%><tr>
+            <td class="itemName"><%=item.name%></td><td class="itemPrice"><%=item.price_cents%></td><td><button class="addItem" type="submit" data-itemid="<%=item.id%>"> ADD TO CART </button></td>
           </tr>
-          <tr>
-            <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
-          </tr>
-          <tr>
-            <td>Red Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
-          </tr>
-          <tr>
-            <td>Black Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
-          </tr>
-          <tr>
-            <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="addItem" type="submit" > ADD TO CART </button></td>
-          </tr>
+          <%}%>
+
+
         </table>
         <!-- CART -->
-        <table class="cartContainer">
-          <tbody class="cart">
-            <tr>
-              <td><p>Let's try and route something to here** when we click add to cart</p></td>
-            </tr>
+        <!-- <table class="cartContainer">
+          <tbody class="cart"> -->
+            <div class="cartItemsContainer" id="cartItemsContainer">
 
+                <tr class="clearCartButtonContainer"><td><button class="clearCartButton" type="submit" > Clear Cart</button></td></tr>
+                <tr class="purchaseButtonContainer"><td><button class="purchaseButton" type="submit" > PURCHASE</button></td></tr>
 
-            <!-- <tr>
-              <td>Green Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE </button></td>
-            </tr>
-            <tr>
-              <td>Orange Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Red Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Black Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr>
-            <tr>
-              <td>Blue Bubble Tea</td><td>$6.50</td><td><button class="removeItem" type="submit" > REMOVE</button></td>
-            </tr> -->
-            <tr class="purchaseButtonContainer"><td><button class="purchaseButton" type="submit" > PURCHASE</button></td></tr>
-          </table>
-          </tbody>
+            </div>
+          <!-- </tbody>
+        </table> -->
 
       </div>
 
@@ -99,8 +77,6 @@
         </div>
 
       </footer>
-
-
     </main>
   </body>
 </html>

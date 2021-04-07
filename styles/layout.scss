@@ -69,13 +69,34 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: flex-end;
   width: 100%;
+}
+.cartItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  background-color: cadetblue;
+  width: 30%;
+}
+.cartItemsContainer tr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .purchaseButtonContainer {
   display: flex;
   flex-direction: row;
+  align-self: flex-end;
   justify-content: flex-end;
+}
+
+.removeButton {
+  font-size: smaller;
+
+}
+.clearCartButton {
+  font-size: smaller;
 }
 
 // FOOTER CONTAINER ------------------------
