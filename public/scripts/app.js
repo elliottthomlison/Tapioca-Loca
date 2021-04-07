@@ -31,7 +31,10 @@ $(document).ready(function() {
   //     // another function populates cart (render.items)
   //     // Gets through jquery, and iterates using for loop
 
+
 $(document).on("click",".addItem",function() {
+
+
   // let row = $("#item1");
   let row = $(this).closest("tr");
   let storageArray = [];
@@ -51,29 +54,30 @@ $(document).on("click",".addItem",function() {
     const tr = document.createElement("tr");
     const tdName = document.createElement("td");
     const tdPrice = document.createElement("td");
-    const removeButtonTd = document.createElement("td");
-    const removeButton = document.createElement("button");
-
+    // const removeButtonTd = document.createElement("td");
+    // const removeButton = document.createElement("button");
 
     tr.setAttribute("class", "cartTr");
     tdName.setAttribute("class", "resultName");
     tdPrice.setAttribute("class", "resultPrice");
-    removeButton.setAttribute("class", "removeButton");
-    removeButton.setAttribute("type", "submit");
+    // removeButton.setAttribute("class", "removeButton");
+    // removeButton.setAttribute("type", "submit");
 
     // ADDS td to row
     tdName.innerHTML = storageArray[0];
     tdPrice.innerHTML = storageArray[1];
-    removeButton.innerHTML = "REMOVE"
+    // removeButton.innerHTML = "REMOVE"
 
 
     // ADDS button to td, all td's to tr, and tr to parent (cartItemsContainer)
-    removeButtonTd.prepend(removeButton);
-    tr.prepend(removeButtonTd);
+    // removeButtonTd.prepend(removeButton);
+    // tr.prepend(removeButtonTd);
     tr.prepend(tdPrice);
     tr.prepend(tdName);
-
     parent.prepend(tr);
+
+
+
 
   } else {
     document.getElementById("result2").innerHTML = "Sorry, your browser does not support Web Storage...";
@@ -81,6 +85,18 @@ $(document).on("click",".addItem",function() {
   cartArray.push(storageArray);
   console.log("cartArray = ", cartArray);
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
+  let itemsTotal = localStorage.getItem("cartArray", JSON.stringify(cartArray)[1])
+  console.log("itemsTotal = ", itemsTotal);
+
+  const totalsRow = document.createElement("tr");
+  const total = document.createElement("td");
+  const sumItems = document.createElement("td");
+
+  sumItems.innerHTML = itemsTotal;
+  total.innerHTML = "TOTAL";
+
+  totalsRow.prepend(sumItems);
+  totalsRow.prepend(total);
 });
 
 
