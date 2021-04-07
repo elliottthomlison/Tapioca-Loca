@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieParser = require('cookie-parser');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -23,6 +24,7 @@ app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -36,6 +38,7 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const cartRoutes = require("./routes/cart");
+const sessionRoutes = require("./routes/sessions");
 
 
 // Mount all resource routes
@@ -43,6 +46,7 @@ const cartRoutes = require("./routes/cart");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/cart", cartRoutes(db));
+app.use("/sessions", sessionRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -55,7 +59,17 @@ app.get("/", (req, res) => {
   db.query("SELECT * FROM menu_items")
   .then(data => {
     console.log("mydata",data.rows)
-    res.render("index", {items:data.rows});
+    // read username and phone from cookies
+    // add username and phone to templatevars
+    // console.log("req.cookies = ",req.cookies);
+    // console.log("req.cookies.name = ",req.cookies.name);
+    // console.log("req.cookies.phone = ",req.cookies.phone);
+    const userData = {
+      name: req.cookies.name,
+      phone: req.cookies.phone
+    };
+    console.log("userData = ",userData);
+    res.render("index", {items:data.rows, userData: userData});
   }).catch(error => console.log(error))
 
 });

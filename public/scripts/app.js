@@ -1,5 +1,4 @@
 
-
 $(() => {
   $.ajax({
     method: "GET",
@@ -25,6 +24,25 @@ $(() => {
 
 // BUTTONS ON CLICK EVENT
 $(document).ready(function() {
+
+  $("#login_form").on("submit", function(event) {
+    event.preventDefault();
+    $(() => {
+      $.ajax({
+        method: "POST",
+        url: "/sessions",
+        data: $(this).serialize()
+      }).done((user) => {
+        var url = window.location.pathname;
+        // console.log(url);
+        // var getQuery = url.split('?')[1]
+        // console.log(getQuery);
+        // window.location = "/";
+        // $('#login_div').hide();
+        console.log("post request complete");
+      });;
+    });
+  })
 
   // ADD TO CART
   //     // add to local storage, push item to array

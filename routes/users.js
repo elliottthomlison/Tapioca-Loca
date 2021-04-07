@@ -10,11 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log("hello world users.route")
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
-        console.log("DATA.rows =", users);
+        // console.log("DATA.rows =", users);
         res.render ('index', {users, items: [] });
 
       })
@@ -26,3 +25,12 @@ module.exports = (db) => {
   });
   return router;
 };
+
+
+
+
+// router.get("/", (req, res) => {
+//   const user = userDatabase[name];
+//   let templateVars = { user };
+//   res.render("/", templateVars);
+// });
