@@ -32,13 +32,15 @@ $(document).ready(function() {
   //     // Gets through jquery, and iterates using for loop
 
 
-$(document).on("click",".addItem",function() {
+  $(document).on("click",".addItem",function() {
 
 
-  // let row = $("#item1");
-  let row = $(this).closest("tr");
-  let storageArray = [];
-  let cartArray = JSON.parse(localStorage.getItem("cartArray")) ?? [];
+    // let row = $("#item1");
+    let row = $(this).closest("tr");
+    let storageArray = [];
+    let cartArray = JSON.parse(localStorage.getItem("cartArray")) ?? [];
+    let itemsTotal = 0;
+
 
   if (typeof(Storage) !== "undefined") {
     // Store in storageArray
@@ -82,21 +84,38 @@ $(document).on("click",".addItem",function() {
   } else {
     document.getElementById("result2").innerHTML = "Sorry, your browser does not support Web Storage...";
   }
+
+
   cartArray.push(storageArray);
   console.log("cartArray = ", cartArray);
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
-  let itemsTotal = localStorage.getItem("cartArray", JSON.stringify(cartArray)[1])
+
+
+  // GETTING TOTAL PURCHASE PRICE
+  // console.log("cartArray ======= ", cartArray);
+  // console.log("cartArray[1] ======= ", cartArray[1]);
+  console.log("typeof(cartArray) = ", typeof cartArray);
+  for (let i = 0; i < cartArray.length; i++) {
+
+          // itemsTotal += item[i];
+          console.log("typeof cartArray[i][1] = ", cartArray[i][1], typeof cartArray[i][1]);
+          itemsTotal += parseInt(cartArray[i][1]);
+          console.log("itemsTotal = ", itemsTotal);
+  }
   console.log("itemsTotal = ", itemsTotal);
 
   const totalsRow = document.createElement("tr");
   const total = document.createElement("td");
   const sumItems = document.createElement("td");
+  const totalsParent = document.getElementById("cartItemsContainer");
 
   sumItems.innerHTML = itemsTotal;
   total.innerHTML = "TOTAL";
 
   totalsRow.prepend(sumItems);
   totalsRow.prepend(total);
+  totalsParent.prepend(totalsRow);
+
 });
 
 
