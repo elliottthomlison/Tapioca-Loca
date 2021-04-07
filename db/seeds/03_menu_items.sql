@@ -13,7 +13,7 @@ INSERT INTO Menu_items (
   price_cents,
   stock
   ) VALUES (
-    'Thai Tea'
+    'Thai Tea',
     5,
     699,
     100

@@ -52,7 +52,12 @@ app.use("/api/cart", cartRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  db.query("SELECT * FROM menu_items")
+  .then(data => {
+    console.log("mydata",data.rows)
+    res.render("index", {items:data.rows});
+  }).catch(error => console.log(error))
+
 });
 
 app.listen(PORT, () => {

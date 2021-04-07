@@ -43,7 +43,7 @@
           <tr>
             <th>Item</th><th>Price</th>
           </tr>
-          <%if (items){%>
+          <%if (items && items.length > 0){%>
           <%for(let item of items) {%><tr>
             <td class="itemName"><%=item.name%></td><td class="itemPrice"><%=item.price_cents%></td><td><button class="addItem" type="submit" data-itemid="<%=item.id%>"> ADD TO CART </button></td>
           </tr>

@@ -6,7 +6,7 @@
 -- password VARCHAR(55)
 -- type VARCHAR(55) (customer, owner, employee)
 -- member_since DATE
-INSERT INTO widgets (name, user_id) VALUES ('Bearings', 2);
+-- INSERT INTO widgets (name, user_id) VALUES ('Bearings', 2);
 -- INSERT OWNER
 INSERT INTO users (name, phone_number, type, password) VALUES ('Leighton', 6042347564, 'owner', 'password');
 
