@@ -109,12 +109,22 @@ $(document).ready(function() {
   const sumItems = document.createElement("td");
   const totalsParent = document.getElementById("cartItemsContainer");
 
+  totalsRow.setAttribute("class", "totalsRow");
+
   sumItems.innerHTML = itemsTotal;
   total.innerHTML = "TOTAL";
 
-  totalsRow.prepend(sumItems);
-  totalsRow.prepend(total);
-  totalsParent.prepend(totalsRow);
+  if (totalsParent) {
+    $(".totalsRow").remove();
+    // $("#cartItemsContainer").remove(totalsRow);
+    totalsRow.prepend(sumItems);
+    totalsRow.prepend(total);
+    totalsParent.prepend(totalsRow);
+  } else {
+    totalsRow.prepend(sumItems);
+    totalsRow.prepend(total);
+    totalsParent.prepend(totalsRow);
+  }
 
 });
 
