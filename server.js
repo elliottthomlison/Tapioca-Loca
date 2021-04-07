@@ -10,6 +10,14 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 
+//twilio set up - inbound sms
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+//twilio set up - outbound sms
+const accountSid = 'AC4f0b75ac3d43dbea9d5a3316b808e7c9';
+const authToken = '155c280ae048dea7b62ab0bb90633d39';
+const client = require('twilio')(accountSid, authToken);
+
+
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -52,4 +60,35 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
+});
+
+
+
+//////////////////////////////////////////////////////////////////////
+//twilio setup
+app.post("/confirmation", (req, res) => {
+  console.log(req.body);
+  client.messages
+    .create({
+      body: 'Your bubble tea will be ready in 15 minutes. 🥤',
+      from: '+16059377831',
+      to: '+17788956372'
+    }).then((message) => {
+      console.log(message.sid)
+    })
+  .then(() => res.redirect('confirmation'), { orderdata: req.body });
+});
+
+app.post("/addtocart", (req, res) => {
+  res.redirect('confirmation');
+});
+
+//twilio set up - this is for inbound sms
+// POST request comes from twilio whenever a response is received via SMS (via ngrok)
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message(`add message`);
+  console.log(twiml.toString());
+
 });
