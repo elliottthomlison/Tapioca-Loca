@@ -1,0 +1,15 @@
+{
+  "name": "twilio",
+  "version": "1.0.0",
+  "description": "A twilio sms API",
+  "main": "send_sms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node send_sms.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ngrok": "^4.0.1"
+  }
+}
