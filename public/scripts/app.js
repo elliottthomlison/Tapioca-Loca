@@ -39,7 +39,7 @@ $(document).ready(function() {
     let row = $(this).closest("tr");
     let storageArray = [];
     let cartArray = JSON.parse(localStorage.getItem("cartArray")) ?? [];
-    let itemsTotal = 0;
+
 
 
   if (typeof(Storage) !== "undefined") {
@@ -85,25 +85,23 @@ $(document).ready(function() {
     document.getElementById("result2").innerHTML = "Sorry, your browser does not support Web Storage...";
   }
 
-
+  // Building and adding the cartArray to storage
   cartArray.push(storageArray);
-  console.log("cartArray = ", cartArray);
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
 
 
   // GETTING TOTAL PURCHASE PRICE
-  // console.log("cartArray ======= ", cartArray);
-  // console.log("cartArray[1] ======= ", cartArray[1]);
+  let itemsTotal = 0;
+
   console.log("typeof(cartArray) = ", typeof cartArray);
   for (let i = 0; i < cartArray.length; i++) {
-
           // itemsTotal += item[i];
           console.log("typeof cartArray[i][1] = ", cartArray[i][1], typeof cartArray[i][1]);
           itemsTotal += parseInt(cartArray[i][1]);
           console.log("itemsTotal = ", itemsTotal);
   }
-  console.log("itemsTotal = ", itemsTotal);
 
+  // DEFINING html elements for TOTAL_PRICE
   const totalsRow = document.createElement("tr");
   const total = document.createElement("td");
   const sumItems = document.createElement("td");
@@ -114,6 +112,7 @@ $(document).ready(function() {
   sumItems.innerHTML = itemsTotal;
   total.innerHTML = "TOTAL";
 
+  // ADDING TOTAL_PRICE TO CART
   if (totalsParent) {
     $(".totalsRow").remove();
     // $("#cartItemsContainer").remove(totalsRow);
