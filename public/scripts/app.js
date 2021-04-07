@@ -105,7 +105,7 @@ $(document).ready(function() {
   const totalsRow = document.createElement("tr");
   const total = document.createElement("td");
   const sumItems = document.createElement("td");
-  const totalsParent = document.getElementById("cartItemsContainer");
+  const totalsParent = document.getElementById("cartButtons");
 
   totalsRow.setAttribute("class", "totalsRow");
 

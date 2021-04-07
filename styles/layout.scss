@@ -84,6 +84,10 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+#cartButtons {
+  display: flex;
+  flex-direction: column;
+}
 .purchaseButtonContainer {
   display: flex;
   flex-direction: row;
