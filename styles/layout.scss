@@ -1,10 +1,7 @@
-// See: https://sass-lang.com/
-
-// NAVBAR / HEADER --------------------------------
-
-
 * {
-  border: solid black 1px;
+  // border: solid black 1px;
+  background-color: white;
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -16,22 +13,31 @@ body {
 }
 
 .navBar {
-  background-color: aqua;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .logoContainer {
   display: flex;
-  justify-content: space-around;
-  padding-left: 20px;
+  justify-content: flex-start;
+  padding-left: 30px;
+  height: 25%;
 }
+
+#logoImg {
+  width: fit-content;
+  height: 50%;
+  width: 50%;
+}
+
 .navButtonsContainer {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  align-content: center;
+  align-items: center;
   margin-top: 30px;
-  margin-right: 20px;
+  margin-right: 35px;
   width: 30%;
 }
 
@@ -54,7 +60,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: blanchedalmond;
   width: 50%;
 }
 .cartContainer {
@@ -62,7 +67,6 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-content: flex-end;
-  background-color: cadetblue;
   width: 30%;
 }
 .cart {
@@ -76,17 +80,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  background-color: cadetblue;
+  // background-color: cadetblue;
   width: 30%;
 }
 .cartItemsContainer tr{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-#cartButtons {
-  display: flex;
-  flex-direction: column;
 }
 .purchaseButtonContainer {
   display: flex;
@@ -108,9 +108,18 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: cyan;
+  // background-color: cyan;
 }
 
 .mapContainer {
-  background-color: burlywood;
+  // background-color: burlywood;
+}
+
+
+
+
+
+#cartButtons {
+  display: flex;
+  flex-direction: column;
 }
