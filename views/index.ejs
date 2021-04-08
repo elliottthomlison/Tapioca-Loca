@@ -9,6 +9,24 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+
+    <script>
+      function initMap() {
+        let location = {lat: 49.262, lng: -123.069};
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: location
+        });
+        const marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+      }
+    </script>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc-2OWcaxT51DGNXLuPVsXYrqS2Q8QCPg&callback=initMap"
+     type="text/javascript"></script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
@@ -84,9 +102,10 @@
 
       <footer>
 
-        <div class="mapContainer">
+        <div id="map">
           <h5>MAP</h5>
         </div>
+
         <div class="mapContainer">
           <ul>
             <li>Address: 345 Chesnut Drive</li>
