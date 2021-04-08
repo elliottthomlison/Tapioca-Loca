@@ -25,6 +25,15 @@ module.exports = (db) => {
           .then(message => console.log(message.sid))
           .done();
 
+    client.messages 
+          .create({ 
+              body: 'To Tapioca-Loca staff: Order placed! Start preparing...🍓🥝🍋🍍🍈🍉',  
+              messagingServiceSid: 'MG496ea940eb8cc83b39ab8267aef2ccf9',      
+              to: '+17788956372' 
+            }) 
+          .then(message => console.log(message.sid)) 
+          .done();
+
     console.log("twilio has been called")
 
 
