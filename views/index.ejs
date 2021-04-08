@@ -22,12 +22,29 @@
         <div class="logoContainer">
           <img id="logoImg" src="/logos/logo.png" alt="logo 1.png">
         </div>
+           <div class="navButtonsContainer">
+              <% if (!userData.name) { %>
+                <div id="login_div">
+                  <form id="login_form" method="POST" action="/sessions">
+                    <input type="phone" name="phone" value="phone number">
+                    <input type="user" name="user" value="name">
+                    <input type="submit" class="btn btn-secondary btn-sm"
+                    value="Log In">
+                  </form>
+                </div>
+                <% } else { %>
+                  <div id="Welcome_user" >
+                    <h3  class="navbar-brand"> WELCOME </h3>
+                    <h3  class="navbar-brand"> <%= userData.name %> </h3>
+                    <form method="POST" action="/logout">
+                      <input type="submit" class="btn btn-secondary btn-sm"
+                      value="LOG OUT" >
+                    </form>
+                  </div>
+                  <% } %>
 
-        <div class="navButtonsContainer">
-          <a href="/login">Login</a>
-          <a href="/register">Register </a>
-          <a href="/cart">Cart</a>
-        </div>
+            </div>
+
       </nav>
 
       <!-- BANNER -->
