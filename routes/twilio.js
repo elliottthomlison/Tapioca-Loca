@@ -1,7 +1,7 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const accountSid = 'AC6624ad3f551c59ad2a5c2b6f92af56bd';
-const authToken = 'add new token here';
+const authToken = '1141aad09caae9757fa52a560a0f421f';
 const client = require('twilio')(accountSid, authToken);
 
 
