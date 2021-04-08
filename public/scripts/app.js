@@ -41,6 +41,7 @@ $(document).ready(function() {
         // $('#login_div').hide();
         // $('#Welcome_user').show();
         console.log("post request complete");
+        location.reload();
       });;
     });
   })
