@@ -146,12 +146,12 @@ $(document).on("click",".purchaseButton",function() {
   alert("Thank you for your order! 🕺");
 
  // TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/twilio"
-  // }).done(() => {
-  //   console.log('message sent ')
-  // });;
+  $.ajax({
+    method: "GET",
+    url: "/api/twilio"
+  }).done(() => {
+    console.log('message sent ')
+  });;
 
   // AJAX post sends all items data in local storage to server side
   });
