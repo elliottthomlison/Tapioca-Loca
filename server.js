@@ -36,7 +36,7 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const cartRoutes = require("./routes/cart");
-// const twilioRoutes = require("./routes/twilio");
+const twilioRoutes = require("./routes/twilio");
 
 
 // Mount all resource routes
@@ -44,7 +44,7 @@ const cartRoutes = require("./routes/cart");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/cart", cartRoutes(db));
-// app.use("/api/twilio", twilioRoutes(db));
+app.use("/api/twilio", twilioRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
