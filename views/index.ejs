@@ -54,13 +54,11 @@
       <div class="mainContainer">
         <!-- MENU -->
         <table class="menuContainer">
-          <tr>
-            <th>Item</th><th>Price</th>
-          </tr>
           <%if (items && items.length > 0){%>
-          <%for(let item of items) {%><tr>
+          <%for(let item of items) {%>
+            <tr class="menuTr" id="menuTr">
             <td class="itemImage"><img class="teaImg" src="<%=item.photo%>" alt="<%=item.photo%>" width="50px" height="80px"></td><td class="itemName"><%=item.name%></td><td class="itemPrice"><%=item.price_cents%></td><td><button class="addItem" type="submit" data-itemid="<%=item.id%>"> ADD TO CART </button></td>
-          </tr>
+            </tr>
           <%}%>
           <%}%>
 
