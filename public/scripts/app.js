@@ -110,6 +110,7 @@ $(document).ready(function() {
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
 
 
+
   // GETTING TOTAL PURCHASE PRICE
   let itemsTotal = 0;
 

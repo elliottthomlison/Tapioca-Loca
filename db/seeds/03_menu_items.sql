@@ -7,62 +7,72 @@
 --   stock INTEGER NOT NULL DEFAULT 0,
 -- )
 
-INSERT INTO Menu_items (
+INSERT INTO menu_items (
   name,
   bill_time_minutes,
   price_cents,
-  stock
+  stock,
+  photo
   ) VALUES (
     'Thai Tea',
     5,
     699,
-    100
+    100,
+    '/tea_images/6_milktea_pudding.png'
   );
 
-  INSERT INTO Menu_items (
+  INSERT INTO menu_items (
   name,
   bill_time_minutes,
   price_cents,
-  stock
+  stock,
+  photo
   ) VALUES (
     'Green Tea',
     4,
     599,
-    100
+    100,
+    '/tea_images/1_alishan.png'
   );
 
-  INSERT INTO Menu_items (
+  INSERT INTO menu_items (
   name,
   bill_time_minutes,
   price_cents,
-  stock
+  stock,
+  photo
   ) VALUES (
     'Black Tea',
     4,
     650,
-    100
+    100,
+    '/tea_images/2_blacktea.png'
   );
 
-  INSERT INTO Menu_items (
+  INSERT INTO menu_items (
   name,
   bill_time_minutes,
   price_cents,
-  stock
+  stock,
+  photo
   ) VALUES (
     'Berry Tea',
     5,
     699,
-    50
+    50,
+    '/tea_images/4_kumquat.png'
   );
 
-  INSERT INTO Menu_items (
+  INSERT INTO menu_items (
   name,
   bill_time_minutes,
   price_cents,
-  stock
+  stock,
+  photo
   ) VALUES (
     'Rare Tea',
     10,
     1099,
-    0
+    0,
+    '/tea_images/5_tapioca.png'
   );
