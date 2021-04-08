@@ -39,6 +39,7 @@ $(document).ready(function() {
         // console.log(getQuery);
         // window.location = "/";
         // $('#login_div').hide();
+        // $('#Welcome_user').show();
         console.log("post request complete");
       });;
     });

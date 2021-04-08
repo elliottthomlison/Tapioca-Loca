@@ -10,7 +10,11 @@ module.exports = (db) => {
       .then(data => {
         const menu_items = data.rows;
         // console.log("DATA.rows =", menu_items);
-        res.render('index', {items: menu_items});
+        const userData = {
+          name: req.cookies.name,
+          phone: req.cookies.phone
+        };
+        res.render('index', {items: menu_items, userData:userData});
 
       })
       .catch(err => {

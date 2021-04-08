@@ -13,16 +13,22 @@ module.exports = (db) => {
     let userPhone = req.body.phone;
     res.cookie("name", userName);
     res.cookie("phone", userPhone);
+
     db.query(`SELECT * FROM users;`)
-      // .then (data => {
+      .then (data => {
+        const userData = {
+          name: data.rows[0].name,
+          phone: data.rows[0].phone
+        };
 
-      //   console.log("data.rows = ", data.rows[0].name);
-      //   // res.render("index", );
-      //   const query = querystring.stringify({
-      //     "user": data.rows[0].name
-      // });
+        console.log("data.rows = ", data.rows[0].name);
+        res.render("index", {userData:userData, items: [] });
+        // const query = querystring.stringify({
+        //   "user": data.rows[0].name
+      });
 
-      res.redirect('/');
+      // res.render('index', {users, items: [] });
+      // res.redirect('/');
         // res.redirect(`/`)
         // res.send(data.rows[0]);
         // res.redirect(url.format({

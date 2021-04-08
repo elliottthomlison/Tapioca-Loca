@@ -13,8 +13,12 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
+        const userData = {
+          name: req.cookies.name,
+          phone: req.cookies.phone
+        };
         // console.log("DATA.rows =", users);
-        res.render ('index', {users, items: [] });
+        res.render ('index', {items: [] , userData:userData});
 
       })
       .catch(err => {

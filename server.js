@@ -68,8 +68,12 @@ app.get("/", (req, res) => {
       name: req.cookies.name,
       phone: req.cookies.phone
     };
+    const templateVars = {
+      items:data.rows, userData: userData
+    }
+    console.log("templateVars = ", templateVars);
     console.log("userData = ",userData);
-    res.render("index", {items:data.rows, userData: userData});
+    res.render("index", templateVars);
   }).catch(error => console.log(error))
 
 });
