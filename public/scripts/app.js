@@ -145,7 +145,7 @@ $(document).ready(function() {
 $(document).on("click",".purchaseButton",function() {
   alert("Thank you for your order! 🕺");
 
-  //TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
+ // TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
   // $.ajax({
   //   method: "GET",
   //   url: "/api/twilio"
