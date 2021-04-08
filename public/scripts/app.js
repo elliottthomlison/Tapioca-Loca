@@ -94,6 +94,7 @@ $(document).ready(function() {
     // ADDS button to td, all td's to tr, and tr to parent (cartItemsContainer)
     // removeButtonTd.prepend(removeButton);
     // tr.prepend(removeButtonTd);
+    tdPrice.prepend("$");
     tr.prepend(tdPrice);
     tr.prepend(tdName);
     parent.prepend(tr);
@@ -118,7 +119,7 @@ $(document).ready(function() {
   for (let i = 0; i < cartArray.length; i++) {
           // itemsTotal += item[i];
           console.log("typeof cartArray[i][1] = ", cartArray[i][1], typeof cartArray[i][1]);
-          itemsTotal += parseInt(cartArray[i][1]);
+          itemsTotal += parseFloat(cartArray[i][1]);
           console.log("itemsTotal = ", itemsTotal);
   }
 
@@ -138,10 +139,12 @@ $(document).ready(function() {
     $(".totalsRow").remove();
     // $("#cartItemsContainer").remove(totalsRow);
     totalsRow.prepend(sumItems);
+    sumItems.prepend("$");
     totalsRow.prepend(total);
     totalsParent.prepend(totalsRow);
   } else {
     totalsRow.prepend(sumItems);
+    sumItems.prepend("$");
     totalsRow.prepend(total);
     totalsParent.prepend(totalsRow);
   }
@@ -168,8 +171,9 @@ $(document).on("click",".purchaseButton",function() {
 
  // TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
   $.ajax({
-    method: "GET",
-    url: "/api/twilio"
+    method: "POST",
+    url: "/api/twilio",
+    data: { cart: JSON.parse(localStorage.getItem("cartArray")) }
   }).done(() => {
     console.log('message sent ')
   });;

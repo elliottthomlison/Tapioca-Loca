@@ -14,6 +14,9 @@ module.exports = (db) => {
     res.cookie("name", userName);
     res.cookie("phone", userPhone);
 
+    // localStorage.setItem("user_name", userName);
+    // localStorage.setItem("user_phone", userPhone);
+
     db.query(`SELECT * FROM users;`)
       .then (data => {
         const userData = {

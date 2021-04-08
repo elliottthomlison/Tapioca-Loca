@@ -14,6 +14,9 @@ module.exports = (db) => {
           name: req.cookies.name,
           phone: req.cookies.phone
         };
+        res.cookie("menu_item_0", menu_items[0].name);
+        console.log("menu_item[0].name =====MHGG====", menu_items[0].name);
+
         res.render('index', {items: menu_items, userData:userData});
 
       })
