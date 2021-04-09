@@ -143,6 +143,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
 }
 
 #cartButtons {
@@ -153,6 +154,18 @@ footer {
 #map {
   height: 250px;
   width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mapContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 200px;
+  padding-right: 20%;
+
 }
 
 #mapIframe {

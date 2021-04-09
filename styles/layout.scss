@@ -150,6 +150,11 @@ footer {
   width: 400px;
 }
 
+.mapContainer {
+  display: flex;
+  justify-self: flex-end;
+}
+
 #modalInfo {
   align-items: center;
   justify-content: center;
