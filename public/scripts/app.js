@@ -152,34 +152,71 @@ $(document).ready(function() {
 });
 
 
+ // REMOVE FROM CART
+ $('.clearCartButton').click(function(){
+  // remove from cart
+  $('.cartTr').remove();
+  $('.totalsRow').remove();
 
-  // REMOVE FROM CART
-  $(document).on("click",".clearCartButton",function() {
-    // remove from cart
-    $('.cartTr').remove();
-
-    // remove from localstorage(cart array)
-    localStorage.removeItem("cartArray");
-
-  });
+  // remove from localstorage(cart array)
+  localStorage.removeItem("cartArray");
 
 
+// PURCHASE BUTTON TO PROMP MODAL
+$('.purchaseButton').click(function(){
+let cartArrayModal = JSON.parse(localStorage.getItem("cartArray")) ?? [];
 
-// PURCHASE BUTTON
-$(document).on("click",".purchaseButton",function() {
-  alert("Thank you for your order! 🕺");
+modalItemsTotal = parseInt(cartArrayModal[0][1]);
 
- // TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
-  $.ajax({
-    method: "POST",
-    url: "/api/twilio",
-    data: { cart: JSON.parse(localStorage.getItem("cartArray")) }
-  }).done(() => {
-    console.log('message sent ')
-  });;
+$('#myModal').modal('show');
 
-  // AJAX post sends all items data in local storage to server side
-  });
+const cart = JSON.parse(localStorage.getItem("cartArray"))
+console.log(cart)
+
+let firstItem = true;
+
+for (const items in cartArrayModal){
+if(firstItem){
+$('#modalInfo').append(`
+<tr>
+<td>Leighton Chen</td>
+<td>7788956372</td>
+<td><p id="modalItem">${cartArrayModal[items][0]}</p></td>
+<td><p id="modalPrice">${cartArrayModal[items][1]}</p></td>
+</tr>
+`)
+} else {
+$('#modalInfo').append(`
+<tr>
+<td class="moreSpace"></td>
+<td class="moreSpace"></td>
+<td class="moreSpace"><p id="modalItem2">${cartArrayModal[items][0]}</p></td>
+<td class="moreSpace"><p id="modalPrice2">${cartArrayModal[items][1]}</p></td>
+</tr>
+`)
+}
+firstItem = false;
+}
 });
 
+$('#cancel_order').click(function(){
+$('#modalInfo').empty();
+});
 
+// CONFIRM ORDER PURCHASE IN MODAL ROUTE TO TWILIO
+$(document).on("click","#twilio_next",function() {
+alert("Thank you for your order! 🕺");
+
+// TWILIO FUNCTION/PATH DISABLED FOR NOW, WILL ENABLE DURING DEMO//
+$.ajax({
+method: "POST",
+url: "/api/twilio",
+data: { cart: JSON.parse(localStorage.getItem("cartArray")) }
+}).done(() => {
+console.log('message sent ')
+});;
+
+// AJAX post sends all items data in local storage to server side
+});
+});
+});
