@@ -1,0 +1,160 @@
+* {
+  background-color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background-color: #EEE;
+}
+
+body h1 {
+  color: #244751;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  width: fit-content;
+  height: 60%;
+  width: 60%;
+  display: block;
+}
+
+.logoContainer:hover #logoGif {
+  width: fit-content;
+  height: 60%;
+  width: 60%;
+  display: block;
+  border-radius: 50%;
+}
+
+.logoContainer:hover #logoImg {
+  display: none;
+}
+
+#logoImg {
+  width: fit-content;
+  height: 60%;
+  width: 60%;
+  display: block;
+  border-radius: 50%;
+}
+
+#logoGif {
+  width: fit-content;
+  height: 60%;
+  width: 60%;
+  display: none;
+  border-radius: 50%;
+}
+
+.navButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 35px;
+  width: 30%;
+}
+
+.bannerContainer {
+  display: flex;
+  justify-content: center;
+  height: 130px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-end;
+  width: 30%;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cartItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 30%;
+}
+
+.cartItemsContainer tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menuTr:hover {
+  font-size: 1.1em;
+  transform: scale(1.1);
+}
+
+.teaImg {
+  border-radius: 50%;
+}
+
+.itemImage {
+  border-radius: 50%;
+}
+
+.purchaseButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.removeButton {
+  font-size: smaller;
+}
+
+.clearCartButton {
+  font-size: smaller;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#cartButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  height: 250px;
+  width: 400px;
+}
+
+#mapIframe {
+  border-radius: 10%;
+}
