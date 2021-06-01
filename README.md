@@ -7,7 +7,7 @@ Tapioca Loca was built using HTML, CSS, JS, JQuery, AJAX, and PostgreSQL.
 ## Final Product
 
 <p float="center">
-  <img src="https://github.com/elliottthomlison/Tapioca-Loca/blob/master/public/docs/home_loca.png?raw=true" class="center" width=970px height=500px />
+  <img src="https://github.com/elliottthomlison/Tapioca-Loca/blob/master/public/docs/home_loca.png?raw=true" class="center" width=1200px height=500px />
   <img src="https://github.com/elliottthomlison/Tapioca-Loca/blob/master/public/docs/modal_loca.png?raw=true" class="center" width=970px height=500px />
   <img src="https://github.com/elliottthomlison/Tapioca-Loca/blob/master/public/docs/text_loca.png?raw=true" class="center" width=970px height=500px />
 </p>
