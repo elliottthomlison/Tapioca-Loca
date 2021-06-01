@@ -1,6 +1,6 @@
 ## Tapioca Loca - A Restaurant Ordering App
 
-Tapioca Loca is a minimalist single page app that allows restaurant clients to order from a restaurant's website. Afterwards, the client will recieve a confirmation text to inform them of when it will be ready.
+Tapioca Loca is a minimalist single-page app that allows restaurant clients to order from a restaurant's website. Afterwards, the client will receive a confirmation text to inform them of when it will be ready. 
 
 Tapioca Loca was built using HTML, CSS, JS, JQuery, AJAX, and PostgreSQL.
 
