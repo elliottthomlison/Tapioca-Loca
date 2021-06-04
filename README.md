@@ -1,8 +1,6 @@
-## Tapioca Loca - A Restaurant Ordering App
+## Tapioca Loca
 
-Tapioca Loca is a minimalist single-page app that allows restaurant clients to order from a restaurant's website. Afterwards, the client will receive a confirmation text to inform them of when it will be ready. 
-
-Tapioca Loca was built using HTML, CSS, JS, JQuery, AJAX, and PostgreSQL.
+Tapioca Loca is a minimalist single-page app that allows restaurant clients to order from a restaurant's website. Afterwards, the client will receive a confirmation text to inform them of when it will be ready. It is the third project that was built during the Lighthouse Labs Web Development Bootcamp. Tapioca Loca was built using HTML, CSS, JS, JQuery, AJAX, and PostgreSQL. Difficulites and challenges arose throughout the project, yet the issues were resolved. The app proved an useful project to teach all three participants further how to build and troubleshoot.
 
 ## Final Product
 
